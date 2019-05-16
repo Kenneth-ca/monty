@@ -3,6 +3,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -32,5 +34,12 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+
+int control_monty(int argc, char *argv[]);
+char **get_tokens(char *parsed_input);
+void print_err(int i, int l_num, char *txt);
+int validate_tokens(char **tokens);
+int exe_m(int l_num, char *cmd, char *arg);
 
 #endif
