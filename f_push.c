@@ -1,10 +1,9 @@
 #include "monty.h"
 /**
- * print_char - writes the character c
- * @params: The name for va_list
+ * f_push - puts a number into the top node
+ * @head: a pointer to the stack
+ * @line_number: the number of lines
  *
- * Return: On success 1.
- * On error, -1 is returned.
  */
 void f_push(stack_t **head, unsigned int line_number)
 {

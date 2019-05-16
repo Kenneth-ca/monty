@@ -1,10 +1,8 @@
 #include "monty.h"
 /**
- * print_char - writes the character c
- * @params: The name for va_list
- *
- * Return: On success 1.
- * On error, -1 is returned.
+ * f_pop - a function that removes the top of the stack
+ * @head: a pointer to the stack
+ * @line_number: the number of lines
  */
 void f_pop(stack_t **head, unsigned int line_number)
 {

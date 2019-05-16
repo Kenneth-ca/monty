@@ -1,10 +1,11 @@
 #include "monty.h"
 /**
  * exe_m - select the right function to execute
- * @tokens[0]: the parsed tokens
+ * @stack: a pointer to the stack
+ * @line_number: the number of lines
+ * @tok_0: the instruction
  *
- * Return: On success 1.
- * On error, -1 is returned.
+ * Return: 0 on success
  */
 int exe_m(stack_t **stack, unsigned int line_number, char *tok_0)
 {
@@ -26,7 +27,5 @@ for (i = 0; i < n_instructions; i++)
 	if (strcmp(op_codes[i].opcode, tok_0) == 0)
 		op_codes[i].f(stack, line_number);
 }
-/*Debe retornar algun estatus la ejecuion.
-Si el estatus es que no se ejecuto bien el comnado, se debe cerrar el archivo */
 return (0);
 }

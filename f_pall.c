@@ -1,10 +1,8 @@
 #include "monty.h"
 /**
  * f_pall - prints all elements of the stack
- * @params: The name for va_list
- *
- * Return: On success 1.
- * On error, -1 is returned.
+ * @stack: a pointer to the stack
+ * @line_number: the number of lines
  */
 void f_pall(stack_t **stack, unsigned int line_number)
 {
