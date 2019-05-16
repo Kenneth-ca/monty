@@ -1,11 +1,11 @@
 /**
- * select_function - select the right function to execute
- * @tokens: the parsed tokens
+ * ex_monty - select the right function to execute
+ * @tokens[0]: the parsed tokens
  *
  * Return: On success 1.
  * On error, -1 is returned.
  */
-instruction_s select_function(char **tokens)
+int ex_monty (int l_num, char *cmd, char *argument)
 {
 	int i;
 
@@ -22,7 +22,10 @@ instruction_s select_function(char **tokens)
 
 for (i = 0; i < n_instructions; i++)
 {
-	if (strcmp(op_codes[i].opcode == format))
-		op_codes[i].f(stack, line_number);
+	if (strcmp(op_codes[i].opcode, cmd) == 1)
+		op_codes[i].f(stack, l_num);
 }
+/*Debe retornar algun estatus la ejecuion.
+Si el estatus es que no se ejecuto bien el comnado, se debe cerrar el archivo */
+
 }
