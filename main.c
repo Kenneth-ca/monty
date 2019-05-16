@@ -1,4 +1,5 @@
 #include "monty.h"
+int global_number = 0;
 
 /**
  * main - main function.

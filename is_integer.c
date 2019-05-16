@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "monty.h"
 
 /**
  * _printf - prints according to format
@@ -17,5 +17,6 @@ int is_integer(char *tokens)
 		if (tokens[i] < 48 || tokens[i] > 57)
 			return (0);
 	}
-return (1);
+	global_number = atoi(tokens);
+	return (1);
 }

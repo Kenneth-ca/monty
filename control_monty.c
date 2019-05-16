@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "monty.h"
 /**
  * control_monty - Control the flow of the project.
@@ -10,9 +9,13 @@ int control_monty(int argc, char *argv[])
 {
 	FILE *fp;
 	char *line_txt, **tokens;
-	int chars_read = 1, valid, line;
+	int chars_read = 1, valid;
+	unsigned int line = 0;
 	size_t buf_size = 0;
+	stack_t *head = NULL;
+	int global_number = 0;
 
+	global_number = global_number;
 	if (argc != 2)
 	{
 		print_err(0, 0, NULL);
@@ -39,6 +42,15 @@ int control_monty(int argc, char *argv[])
 					print_err(2, line, tokens[0]);
 					fclose(fp);
 					exit(EXIT_FAILURE);
+				}
+				else if (valid == 1)
+				{
+					if (is_integer(tokens[1]) == 1)
+						exe_m(&head, line, tokens[0]);
+				}
+				else
+				{
+					exe_m(&head, line, tokens[0]);
 				}
 /*
 				else if (valid == 1)

@@ -1,12 +1,12 @@
 #include "monty.h"
 /**
- * print_char - writes the character c
+ * f_pint -
  * @params: The name for va_list
  *
  * Return: On success 1.
  * On error, -1 is returned.
  */
-void f_push(stack_t **head, unsigned int line_number)
+void f_pint(stack_t **head, unsigned int line_number)
 {
 	stack_t *new_node;
 

@@ -35,11 +35,19 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-
+extern int global_number;
 int control_monty(int argc, char *argv[]);
 char **get_tokens(char *parsed_input);
 void print_err(int i, int l_num, char *txt);
 int validate_tokens(char **tokens);
-int exe_m(int l_num, char *cmd, char *arg);
+int exe_m(stack_t **stack, unsigned int line_number, char *tok_0);
+int is_integer(char *tokens);
+void f_push(stack_t **head, unsigned int line_number);
+void f_pall(stack_t **head, unsigned int line_number);
+void f_pint(stack_t **head, unsigned int line_number);
+void f_pop(stack_t **head, unsigned int line_number);
+void f_swap(stack_t **head, unsigned int line_number);
+void f_add(stack_t **head, unsigned int line_number);
+void f_nop(stack_t **head, unsigned int line_number);
 
 #endif

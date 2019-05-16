@@ -6,7 +6,7 @@
  * Return: On success 1.
  * On error, -1 is returned.
  */
-void f_push(stack_t **head, unsigned int line_number)
+void f_add(stack_t **head, unsigned int line_number)
 {
 	stack_t *new_node;
 
