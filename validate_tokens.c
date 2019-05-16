@@ -6,21 +6,17 @@
   */
 int validate_tokens(char **tokens)
 {
-	int i, j;
+	int j;
 	char *f[7] = {"push", "pall", "pint", "pop", "swap", "add", "nop"};
 
 	if (tokens[0] == NULL) /* Empty line read, do nothing */
-		return (7);
-
-	for (i = 0; tokens[i] != NULL; i++)
+	return (7);
+	for (j = 0; j < 7; j++)
 	{
-		for (j = 0; j < 7; j++)
+		if (strcmp(tokens[0], f[j]) == 0)
 		{
-			if (strcmp(tokens[i], f[j]) == 0)
-			{
-				/* Function found */
-				return (j + 1);
-			}
+			/* Function found */
+			return (j + 1);
 		}
 	}
 	/* Function not found */
