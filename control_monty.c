@@ -38,7 +38,7 @@ int control_monty(int argc, char *argv[])
 					if (is_integer(my_tokens[1]) == 1)
 						exe_m(&head, line, my_tokens[0]);
 				}
-				else if (valid > 1 && valid < 8)
+				else if (valid > 1 && valid < 12)
 					exe_m(&head, line, my_tokens[0]);
 			}
 		}

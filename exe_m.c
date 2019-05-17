@@ -10,7 +10,7 @@
 int exe_m(stack_t **stack, unsigned int line_number, char *tok_0)
 {
 	int i;
-	int n_instructions = 7;
+	int n_instructions = 11;
 
 	instruction_t op_codes[] = {
 	{"push", f_push},
@@ -19,7 +19,11 @@ int exe_m(stack_t **stack, unsigned int line_number, char *tok_0)
 	{"pop", f_pop},
 	{"swap", f_swap},
 	{"add", f_add},
-	{"nop", f_nop},
+	{"sub", f_sub},
+	{"mul", f_mul},
+	{"div", f_div},
+	{"mod", f_mod},
+	{"nop", f_nop}
 };
 
 for (i = 0; i < n_instructions; i++)

@@ -7,11 +7,12 @@
 int validate_tokens(char **tokens)
 {
 	int j;
-	char *f[7] = {"push", "pall", "pint", "pop", "swap", "add", "nop"};
+	char *f[11] = {"push", "pall", "pint", "pop", "swap", "add", "sub",
+			"mul", "div", "mod", "nop"};
 
 	if (tokens[0] == NULL)
-		return (8);
-	for (j = 0; j < 7; j++)
+		return (14);
+	for (j = 0; j < 12; j++)
 	{
 		if (strcmp(tokens[0], f[j]) == 0)
 		{
