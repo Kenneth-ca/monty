@@ -16,4 +16,14 @@ void print_err(int i, int l_num, char *txt)
 		fprintf(stderr, "L%d: unknown instruction %s\n", l_num, txt);
 	if (i == 3)
 		fprintf(stderr, "Error: malloc failed");
+	if (i == 4)
+		fprintf(stderr, "L%d: can't add, stack too short\n", l_num);
+	if (i == 5)
+		fprintf(stderr, "L%d: can't sub, stack too short\n", l_num);
+	if (i == 6)
+		fprintf(stderr, "L%d: can't mul, stack too short\n", l_num);
+	if (i == 7)
+		fprintf(stderr, "L%d: can't div, stack too short\n", l_num);
+	if (i == 8)
+		fprintf(stderr, "L%d: can't mod, stack too short\n", l_num);
 }
