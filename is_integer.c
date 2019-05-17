@@ -9,6 +9,8 @@ int is_integer(char *tokens)
 {
 	int i = 0;
 
+	if (tokens == NULL)
+		return (0);
 	if (tokens[i] == '-')
 		i++;
 	for (; tokens[i] != '\0'; i++)
