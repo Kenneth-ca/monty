@@ -3,20 +3,17 @@
 /**
   * get_tokens - tokenizes text lines intro strings
   * @string: input to tokenize
+  * @my_tokens: tokens
   * Return: tokenized input
   */
-char **get_tokens(char *string)
+void get_tokens(char *string, char **my_tokens)
 {
-	int bufsize = 10000;
 	int i = 0;
-	char **my_tokens;
 	char *token;
 	char *separators = " \t\n";
 
-	my_tokens = malloc(sizeof(char *) * bufsize);
 	if (my_tokens == NULL)
 		exit(EXIT_FAILURE);
-
 	token = strtok(string, separators);
 	while (token != NULL)
 	{
@@ -25,5 +22,4 @@ char **get_tokens(char *string)
 		token = strtok(NULL, separators);
 	}
 	my_tokens[i] = NULL;
-	return (my_tokens);
 }
