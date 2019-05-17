@@ -8,11 +8,10 @@
 int control_monty(int argc, char *argv[])
 {
 	FILE *fp;
-	char *line_txt;
+	char *line_txt, *my_tokens[1024];
 	int chars_read = 1, valid;
 	unsigned int line = 0;
 	size_t buf_size = 0;
-	char *my_tokens[1024];
 	stack_t *head = NULL;
 
 	if (argc == 2)
@@ -33,8 +32,7 @@ int control_monty(int argc, char *argv[])
 					fclose(fp);
 					free(line_txt);
 					free_stack_t(head);
-					exit(EXIT_FAILURE);
-				}
+					exit(EXIT_FAILURE); }
 				else if (valid == 1)
 				{
 					if (is_integer(my_tokens[1]) == 1)

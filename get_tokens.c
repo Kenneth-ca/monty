@@ -3,6 +3,7 @@
 /**
   * get_tokens - tokenizes text lines intro strings
   * @string: input to tokenize
+  * @my_tokens: tokens
   * Return: tokenized input
   */
 void get_tokens(char *string, char **my_tokens)
