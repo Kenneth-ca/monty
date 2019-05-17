@@ -15,25 +15,20 @@ int control_monty(int argc, char *argv[])
 	stack_t *head = NULL;
 
 	if (argc == 2)
-	{
-		fp = fopen(argv[1], "r+");
+	{	fp = fopen(argv[1], "r+");
 		if (fp == NULL)
-		{
-			print_err(1, 0, argv[1]);
+		{	print_err(1, 0, argv[1]);
 			fclose(fp);
 			exit(EXIT_FAILURE);
 		}
 		for (line = 0; chars_read > 0 ;)
-		{
-			line++;
+		{	line++;
 			chars_read = getline(&line_txt, &buf_size, fp);
 			if (chars_read > 0)
-			{
-				tokens = get_tokens(line_txt);
+			{	tokens = get_tokens(line_txt);
 				valid = validate_tokens(tokens);
 				if (valid == 0)
-				{
-					print_err(2, line, tokens[0]);
+				{	print_err(2, line, tokens[0]);
 					fclose(fp);
 					free_stack_t(head);
 					exit(EXIT_FAILURE);
