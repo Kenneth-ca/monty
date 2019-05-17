@@ -6,19 +6,27 @@
  */
 void f_add(stack_t **head, unsigned int line_number)
 {
-	stack_t *new_node;
+	stack_t *temp, *aux, *node;
 
-	(void)line_number;
-	new_node = malloc(sizeof(stack_t));
-	if (new_node == NULL)
+        line_number = line_number;
+
+ 	if (*head == NULL || (*head)->next == NULL)
 	{
-		free(new_node);
-		return;
+		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
 	}
-	new_node->n = global_number;
-	if (*head != NULL)
-		(*head)->prev = new_node;
-	new_node->prev = NULL;
-	new_node->next = *head;
-	*head = new_node;
+	if ((*head)->next != NULL)
+	{
+		(*head)->next->n += (*head)->n;
+	}
+        temp = *head;
+        if (temp != NULL)
+        {
+                aux = temp->next;
+                node = temp;
+                if (aux != NULL)
+                        aux->prev = NULL;
+                free(node);
+                *head = aux;
+        }
 }
