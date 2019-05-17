@@ -1,26 +1,12 @@
 #include "monty.h"
 /**
- * print_char - writes the character c
- * @params: The name for va_list
+ * f_nop - doesn't do anything
+ * @head: a pointer to the stack
+ * @line_number: the number of lines readed
  *
- * Return: On success 1.
- * On error, -1 is returned.
  */
 void f_nop(stack_t **head, unsigned int line_number)
 {
-	stack_t *new_node;
-
+	(void)head;
 	(void)line_number;
-	new_node = malloc(sizeof(stack_t));
-	if (new_node == NULL)
-	{
-		free(new_node);
-		return;
-	}
-	new_node->n = global_number;
-	if (*head != NULL)
-		(*head)->prev = new_node;
-	new_node->prev = NULL;
-	new_node->next = *head;
-	*head = new_node;
 }

@@ -1,8 +1,8 @@
 #include "monty.h"
 
 /**
- * _printf - prints according to format
- * @format: The given format
+ * is_integer - a function that checks for integers
+ * @tokens: tokens from the file
  *
  * Return: 1 if it is a number, 0 if not.
  */

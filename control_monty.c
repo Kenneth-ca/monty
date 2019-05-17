@@ -13,34 +13,24 @@ int control_monty(int argc, char *argv[])
 	unsigned int line = 0;
 	size_t buf_size = 0;
 	stack_t *head = NULL;
-	int global_number = 0;
 
-	global_number = global_number;
-	if (argc != 2)
-	{
-		print_err(0, 0, NULL);
-		exit(EXIT_FAILURE);
-	}
 	if (argc == 2)
-	{
-		fp = fopen(argv[1], "r+");
+	{	fp = fopen(argv[1], "r+");
 		if (fp == NULL)
-		{
-			print_err(1, 0, argv[1]);
+		{	print_err(1, 0, argv[1]);
 			fclose(fp);
 			exit(EXIT_FAILURE);
 		}
-		for (line = 1; chars_read > 0 ; line++)
-		{
+		for (line = 0; chars_read > 0 ;)
+		{	line++;
 			chars_read = getline(&line_txt, &buf_size, fp);
 			if (chars_read > 0)
-			{
-				tokens = get_tokens(line_txt);
+			{	tokens = get_tokens(line_txt);
 				valid = validate_tokens(tokens);
 				if (valid == 0)
-				{
-					print_err(2, line, tokens[0]);
+				{	print_err(2, line, tokens[0]);
 					fclose(fp);
+					free_stack_t(head);
 					exit(EXIT_FAILURE);
 				}
 				else if (valid == 1)
@@ -48,21 +38,12 @@ int control_monty(int argc, char *argv[])
 					if (is_integer(tokens[1]) == 1)
 						exe_m(&head, line, tokens[0]);
 				}
-				else
-				{
+				else if (valid > 1 && valid < 8)
 					exe_m(&head, line, tokens[0]);
-				}
-/*
-				else if (valid == 1)
-					st = exe_m(line, tokens[0], tokens[1]);
-				else if (valid > 1  && valid < 8)
-					st = exe_m(line, tokens[0], 0);
-				if (st == -1)
-					printf("Error exe");
-*/
 			}
 		}
 	fclose(fp);
 	}
+	free_stack_t(head);
 	return (0);
 }
