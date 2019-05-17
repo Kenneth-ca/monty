@@ -1,25 +1,26 @@
 #include "monty.h"
 /**
- * f_pop - a function that removes the top of the stack
- * @head: a pointer to the stack
- * @line_number: the number of lines
+ * f_pop - erases a node
+ * @head: head of the stack
+ * @line_number: line of the comand
+ *
+ * Return: On success 1.
+ * On error, -1 is returned.
  */
 void f_pop(stack_t **head, unsigned int line_number)
 {
-	stack_t *new_node;
+	stack_t *temp, *aux, *node;
 
-	(void)line_number;
-	new_node = malloc(sizeof(stack_t));
-	if (new_node == NULL)
+	line_number = line_number;
+
+	temp = *head;
+	if (temp != NULL)
 	{
-		free(new_node);
-		print_err(3, line_number, "");
-		exit(EXIT_FAILURE);
+		aux = temp->next;
+		node = temp;
+		if (aux != NULL)
+			aux->prev = NULL;
+		free(node);
+		*head = aux;
 	}
-	new_node->n = global_number;
-	if (*head != NULL)
-		(*head)->prev = new_node;
-	new_node->prev = NULL;
-	new_node->next = *head;
-	*head = new_node;
 }
