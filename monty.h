@@ -37,7 +37,7 @@ typedef struct instruction_s
 
 extern int global_number;
 int control_monty(int argc, char *argv[]);
-char **get_tokens(char *parsed_input);
+void get_tokens(char *parsed_input, char **my_tokens);
 void print_err(int i, int l_num, char *txt);
 int validate_tokens(char **tokens);
 int exe_m(stack_t **stack, unsigned int line_number, char *tok_0);

@@ -11,7 +11,7 @@ void free_stack_t(stack_t *head)
 
 	while (head != NULL)
 	{
-		temp = head->prev;
+		temp = head->next;
 		free(head);
 		head = temp;
 	}

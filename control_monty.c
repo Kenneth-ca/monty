@@ -8,10 +8,11 @@
 int control_monty(int argc, char *argv[])
 {
 	FILE *fp;
-	char *line_txt, **tokens;
+	char *line_txt;
 	int chars_read = 1, valid;
 	unsigned int line = 0;
 	size_t buf_size = 0;
+	char *my_tokens[1024];
 	stack_t *head = NULL;
 
 	if (argc == 2)
@@ -25,25 +26,27 @@ int control_monty(int argc, char *argv[])
 		{	line++;
 			chars_read = getline(&line_txt, &buf_size, fp);
 			if (chars_read > 0)
-			{	tokens = get_tokens(line_txt);
-				valid = validate_tokens(tokens);
+			{	get_tokens(line_txt, my_tokens);
+				valid = validate_tokens(my_tokens);
 				if (valid == 0)
-				{	print_err(2, line, tokens[0]);
+				{	print_err(2, line, my_tokens[0]);
 					fclose(fp);
+					free(line_txt);
 					free_stack_t(head);
 					exit(EXIT_FAILURE);
 				}
 				else if (valid == 1)
 				{
-					if (is_integer(tokens[1]) == 1)
-						exe_m(&head, line, tokens[0]);
+					if (is_integer(my_tokens[1]) == 1)
+						exe_m(&head, line, my_tokens[0]);
 				}
 				else if (valid > 1 && valid < 8)
-					exe_m(&head, line, tokens[0]);
+					exe_m(&head, line, my_tokens[0]);
 			}
 		}
 	fclose(fp);
 	}
+	free(line_txt);
 	free_stack_t(head);
 	return (0);
 }
