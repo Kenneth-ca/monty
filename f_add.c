@@ -4,22 +4,22 @@
  * @head: a pointer to the stack
  * @line_number: the number of lines
  */
-void f_add(stack_t **head, unsigned int line_number)
+void f_add(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp, *aux, *node;
 
 	line_number = line_number;
 
-	if (*head == NULL || (*head)->next == NULL)
+	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	if ((*head)->next != NULL)
+	if ((*stack)->next != NULL)
 	{
-		(*head)->next->n += (*head)->n;
+		(*stack)->next->n += (*stack)->n;
 	}
-	temp = *head;
+	temp = *stack;
 	if (temp != NULL)
 	{
 		aux = temp->next;
@@ -27,6 +27,6 @@ void f_add(stack_t **head, unsigned int line_number)
 		if (aux != NULL)
 			aux->prev = NULL;
 		free(node);
-		*head = aux;
+		*stack = aux;
 	}
 }

@@ -8,7 +8,7 @@
 int control_monty(int argc, char *argv[])
 {
 	FILE *fp;
-	char *line_txt, *my_tokens[1024];
+	char *line_txt = NULL, *my_tokens[1024];
 	int chars_read = 1, valid;
 	unsigned int line = 0;
 	size_t buf_size = 0;
