@@ -1,11 +1,8 @@
 #include "monty.h"
 /**
  * f_swap - change info from two nodes
- * @head: head of the stack
+ * @stack: head of the stack
  * @line_number: line of the comand
- *
- * Return: On success 1.
- * On error, -1 is returned.
  */
 void f_swap(stack_t **stack, unsigned int line_number)
 {

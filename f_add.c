@@ -1,7 +1,7 @@
 #include "monty.h"
 /**
  * f_add - a function that adds the top numbers
- * @head: a pointer to the stack
+ * @stack: a pointer to the stack
  * @line_number: the number of lines
  */
 void f_add(stack_t **stack, unsigned int line_number)

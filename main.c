@@ -9,14 +9,11 @@ int global_number = 0;
  */
 int main(int argc, char *argv[])
 {
-	int stat;
-
 	if (argc != 2)
 	{
 		print_err(0, 0, NULL);
 		exit(EXIT_FAILURE);
 	}
-	stat = control_monty(argc, argv);
-	printf("\n %d \n", stat);
+	control_monty(argc, argv);
 	return (0);
 }
