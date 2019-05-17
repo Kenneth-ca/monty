@@ -49,5 +49,6 @@ void f_pop(stack_t **head, unsigned int line_number);
 void f_swap(stack_t **head, unsigned int line_number);
 void f_add(stack_t **head, unsigned int line_number);
 void f_nop(stack_t **head, unsigned int line_number);
+void free_stack_t(stack_t *head);
 
 #endif

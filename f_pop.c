@@ -13,7 +13,8 @@ void f_pop(stack_t **head, unsigned int line_number)
 	if (new_node == NULL)
 	{
 		free(new_node);
-		return;
+		print_err(3, line_number, "");
+		exit(EXIT_FAILURE);
 	}
 	new_node->n = global_number;
 	if (*head != NULL)

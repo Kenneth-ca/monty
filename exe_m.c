@@ -19,7 +19,7 @@ int exe_m(stack_t **stack, unsigned int line_number, char *tok_0)
 	{"pop", f_pop},
 	{"swap", f_swap},
 	{"add", f_add},
-	{"nop", f_nop}
+	{"nop", f_nop},
 };
 
 for (i = 0; i < n_instructions; i++)

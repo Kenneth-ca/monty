@@ -23,8 +23,9 @@ int control_monty(int argc, char *argv[])
 			fclose(fp);
 			exit(EXIT_FAILURE);
 		}
-		for (line = 1; chars_read > 0 ; line++)
+		for (line = 0; chars_read > 0 ;)
 		{
+			line++;
 			chars_read = getline(&line_txt, &buf_size, fp);
 			if (chars_read > 0)
 			{
@@ -34,6 +35,7 @@ int control_monty(int argc, char *argv[])
 				{
 					print_err(2, line, tokens[0]);
 					fclose(fp);
+					free_stack_t(head);
 					exit(EXIT_FAILURE);
 				}
 				else if (valid == 1)
@@ -41,11 +43,12 @@ int control_monty(int argc, char *argv[])
 					if (is_integer(tokens[1]) == 1)
 						exe_m(&head, line, tokens[0]);
 				}
-				else
+				else if (valid > 1 && valid < 8)
 					exe_m(&head, line, tokens[0]);
 			}
 		}
 	fclose(fp);
 	}
+	free_stack_t(head);
 	return (0);
 }

@@ -9,8 +9,8 @@ int validate_tokens(char **tokens)
 	int j;
 	char *f[7] = {"push", "pall", "pint", "pop", "swap", "add", "nop"};
 
-	if (tokens[0] == NULL) /* Empty line read, do nothing */
-	return (7);
+	if (tokens[0] == NULL)
+		return (8);
 	for (j = 0; j < 7; j++)
 	{
 		if (strcmp(tokens[0], f[j]) == 0)

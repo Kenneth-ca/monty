@@ -2,7 +2,8 @@ push 1
 push 2 
   push 3  
                    pall            
-hola push -9
+pall        
+      
 
 push 4        
 

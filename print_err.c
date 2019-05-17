@@ -14,4 +14,6 @@ void print_err(int i, int l_num, char *txt)
 		fprintf(stderr, "Error: Can't open file <%s>\n", txt);
 	if (i == 2)
 		fprintf(stderr, "L%d: unknown instruction %s\n", l_num, txt);
+	if (i == 3)
+		fprintf(stderr, "Error: malloc failed");
 }
