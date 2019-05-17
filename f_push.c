@@ -15,7 +15,7 @@ void f_push(stack_t **head, unsigned int line_number)
 	{
 		free(new_node);
 		print_err(3, line_number, "");
-                exit(EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 	new_node->n = global_number;
 	if (*head != NULL)
