@@ -36,10 +36,10 @@ int control_monty(int argc, char *argv[])
 				else if (valid == 1)
 				{
 					if (is_integer(my_tokens[1]) == 1)
-						exe_m(&head, line, my_tokens[0]);
+						exe_m(&head, line, my_tokens[0], line_txt, fp);
 				}
-				else if (valid > 1 && valid < 8)
-					exe_m(&head, line, my_tokens[0]);
+				else if (valid > 1 && valid < 12)
+					exe_m(&head, line, my_tokens[0], line_txt, fp);
 			}
 		}
 	fclose(fp);
