@@ -10,11 +10,6 @@ void f_mul(stack_t **stack, unsigned int line_number)
 
 	line_number = line_number;
 
-	if (*stack == NULL || (*stack)->next == NULL)
-	{
-		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
-		exit(EXIT_FAILURE);
-	}
 	if ((*stack)->next != NULL)
 	{
 		(*stack)->next->n = (*stack)->next->n * (*stack)->n;
