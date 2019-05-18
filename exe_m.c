@@ -41,7 +41,7 @@ for (i = 0; i < n_instructions; i++)
 			fclose(fp);
 			exit(EXIT_FAILURE);
 		}
-		if (i == 8 || i == 9)
+		if ((i == 8 || i == 9) && ((*stack)->n == 0))
 		{
 			fprintf(stderr, "L%d: division by zero\n", line_number);
 			free(line_t);

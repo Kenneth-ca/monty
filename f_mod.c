@@ -10,8 +10,6 @@ void f_mod(stack_t **stack, unsigned int line_number)
 
 	line_number = line_number;
 
-	if ((*stack)->n == 0)
-		fprintf(stderr, "L%d: division by zero\n", line_number);
 	if ((*stack)->next != NULL)
 	{
 		(*stack)->next->n = (*stack)->next->n % (*stack)->n;
