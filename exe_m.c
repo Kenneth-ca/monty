@@ -29,7 +29,6 @@ int exe_m(stack_t **stack, unsigned int line_number, char *tok_0,
 	{"nop", f_nop}
 };
 
-printf("HOLA\n");
 for (i = 0; i < n_instructions; i++)
 {
 	if (strcmp(op_codes[i].opcode, tok_0) == 0)
