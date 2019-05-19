@@ -14,7 +14,12 @@ void f_pop(stack_t **head, unsigned int line_number)
 	line_number = line_number;
 
 	temp = *head;
-	if (temp != NULL)
+	if (temp == NULL)
+	{
+		print_err(9, line_number, "");
+		exit(EXIT_FAILURE);
+	}
+	else
 	{
 		aux = temp->next;
 		node = temp;

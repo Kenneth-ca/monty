@@ -26,4 +26,6 @@ void print_err(int i, int l_num, char *txt)
 		fprintf(stderr, "L%d: can't div, stack too short\n", l_num);
 	if (i == 8)
 		fprintf(stderr, "L%d: can't mod, stack too short\n", l_num);
+	if (i == 9)
+		fprintf(stderr, "L%d: can't pop an empty stack\n", l_num);
 }
