@@ -19,6 +19,8 @@ int validate_tokens(char **tokens)
 			/* Function found */
 			return (j + 1);
 		}
+		if (strcmp(tokens[0], "#") == 0)
+			return (11);
 	}
 	/* Function not found */
 	return (0);
